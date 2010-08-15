@@ -1,0 +1,18 @@
+<p>
+  <b>Location:</b>
+  <%=h @place.location %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%=h @place.count %>
+</p>
+
+<p>
+  <b>Caffeination level:</b>
+  <%=h @place.caffeination_level %>
+</p>
+
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

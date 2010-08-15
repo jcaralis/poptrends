@@ -1,0 +1,130 @@
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-08-15 14:48:25) [GET]
+  [4;36;1mPlace Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: places: SELECT * FROM "places" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: places: SELECT * FROM "places" ):
+  app/controllers/places_controller.rb:5:in `index'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePlaces (20100815184802)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "count" integer, "caffeination_level" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100815184802')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("places")[0m
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-08-15 14:49:07) [GET]
+  [4;36;1mPlace Load (0.4ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#new (for 127.0.0.1 at 2010-08-15 14:49:10) [GET]
+Rendering template within layouts/places
+Rendering places/new
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/places/new]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 14:55:52) [GET]
+  Parameters: {"location"=>"chicago,il"}
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 695ms (View: 11, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=chicago,il]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 14:57:26) [GET]
+  Parameters: {"location"=>"boston,ma"}
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 914ms (View: 2, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=boston,ma]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 14:57:42) [GET]
+  Parameters: {"location"=>"winthop,ma"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/places_controller.rb:23:in `getPlaces'
+
+Rendered rescues/_trace (88.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 14:57:49) [GET]
+  Parameters: {"location"=>"winthrop,ma"}
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 353ms (View: 1, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=winthrop,ma]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 14:58:02) [GET]
+  Parameters: {"location"=>"winthrop,ma"}
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 257ms (View: 2, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=winthrop,ma]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 15:00:39) [GET]
+  Parameters: {"location"=>"winthrop,ma"}
+  [4;36;1mPlace Create (0.4ms)[0m   [0;1mINSERT INTO "places" ("location", "created_at", "updated_at", "caffeination_level", "count") VALUES('winthrop,ma', '2010-08-15 19:00:40', '2010-08-15 19:00:40', 1, 2)[0m
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 215ms (View: 2, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=winthrop,ma]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 15:00:45) [GET]
+  Parameters: {"location"=>"winthrop,ma"}
+  [4;35;1mPlace Create (0.3ms)[0m   [0mINSERT INTO "places" ("location", "created_at", "updated_at", "caffeination_level", "count") VALUES('winthrop,ma', '2010-08-15 19:00:45', '2010-08-15 19:00:45', 1, 2)[0m
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 203ms (View: 1, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=winthrop,ma]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 15:01:23) [GET]
+  Parameters: {"location"=>"everett,ma"}
+  [4;36;1mPlace Create (0.3ms)[0m   [0;1mINSERT INTO "places" ("location", "created_at", "updated_at", "caffeination_level", "count") VALUES('everett,ma', '2010-08-15 19:01:24', '2010-08-15 19:01:24', 1, 3)[0m
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 282ms (View: 1, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=everett,ma]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2010-08-15 15:02:43) [GET]
+  [4;35;1mPlace Load (0.5ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/places/]
+
+
+Processing PlacesController#getPlaces (for 127.0.0.1 at 2010-08-15 15:03:01) [GET]
+  Parameters: {"location"=>"queens,ny"}
+  [4;36;1mPlace Create (0.3ms)[0m   [0;1mINSERT INTO "places" ("location", "created_at", "updated_at", "caffeination_level", "count") VALUES('queens,ny', '2010-08-15 19:03:02', '2010-08-15 19:03:02', 18, 37)[0m
+Rendering template within layouts/places
+Rendering places/getPlaces
+Completed in 570ms (View: 2, DB: 0) | 200 OK [http://localhost/places/getPlaces?location=queens%2Cny]

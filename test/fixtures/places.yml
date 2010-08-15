@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  location: MyString
+  count: 1
+  caffeination_level: 1
+
+two:
+  location: MyString
+  count: 1
+  caffeination_level: 1

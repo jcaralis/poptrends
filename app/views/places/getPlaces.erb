@@ -1,0 +1,24 @@
+<% for place in @places['jsonResponse']['results']  %>
+
+         <%= place['location']['name'] %><br>
+         <%= place['location']['address']['street'] %>,   <%= place['location']['address']['city'] %>,   <%= place['location']['address']['state'] %><p>
+
+ 
+ <% end %>
+
+Total Count: <%= @count %><p>
+Starbucks per square mile: <%= @count.div(2) %><p>
+
+Caffeination Level of Population: 
+<% if  @caffeination_level <= 1 %>
+ The Walking Dead
+<% elsif @caffeination_level > 1 &&  @caffeination_level <= 3 %>
+ Medium
+<% elsif  @caffeination_level > 3 &&  @caffeination_level <= 10 %>
+ High
+<% elsif  @caffeination_level > 10 &&  @caffeination_level <= 50 %>
+Extremely High
+<% else %>
+Over Caffeinated Zombie Alert!!!
+<% end %>
+</p>
