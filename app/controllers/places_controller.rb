@@ -27,7 +27,7 @@ class PlacesController < ApplicationController
               place.location = @location
               place.count = @count
               place.caffeination_level = @caffeination_level
-            place.save
+            place.save  
 
 
 
